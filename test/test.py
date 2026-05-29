@@ -9,7 +9,7 @@ from cocotb.triggers import ClockCycles
 @cocotb.test()
 async def test_ecc_processor(dut):
 
-```
+
 dut._log.info("Starting ECC Processor Test")
 
 clock = Clock(dut.clk, 10, unit="us")
