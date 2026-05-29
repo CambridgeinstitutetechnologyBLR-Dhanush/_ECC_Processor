@@ -2,7 +2,7 @@
 `default_nettype none
 `timescale 1ns / 1ps
 
-module tb ();
+module tb_tt_um_ecc_processor ();
 
   // Dump waveforms
   initial begin
