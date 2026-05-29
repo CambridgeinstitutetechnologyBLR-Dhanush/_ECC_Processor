@@ -70,4 +70,3 @@ module tb_tt_um_ecc_processor ();
 endmodule
 
 `default_nettype wire
-```
