@@ -8,29 +8,28 @@ from cocotb.triggers import ClockCycles
 
 @cocotb.test()
 async def test_ecc_processor(dut):
-dut._log.info("Starting ECC Processor Test")
+    dut._log.info("Starting ECC Processor Test")
 
-```
-clock = Clock(dut.clk, 10, unit="us")
-cocotb.start_soon(clock.start())
 
-dut.ena.value = 1
-dut.ui_in.value = 0
-dut.uio_in.value = 0
-dut.rst_n.value = 0
+    clock = Clock(dut.clk, 10, unit="us")
+    cocotb.start_soon(clock.start())
 
-await ClockCycles(dut.clk, 5)
+    dut.ena.value = 1
+    dut.ui_in.value = 0
+    dut.uio_in.value = 0
+    dut.rst_n.value = 0
 
-dut.rst_n.value = 1
+    await ClockCycles(dut.clk, 5)
 
-dut.ui_in.value = 5
-dut.uio_in.value = 3
+    dut.rst_n.value = 1
 
-await ClockCycles(dut.clk, 1)
+    dut.ui_in.value = 5
+    dut.uio_in.value = 3
 
-expected = (5 * 3) + 5
+    await ClockCycles(dut.clk, 1)
 
-assert int(dut.uo_out.value) == expected
+    expected = (5 * 3) + 5
 
-dut._log.info("ECC Processor Test Passed")
-```
+    assert int(dut.uo_out.value) == expected
+
+    dut._log.info("ECC Processor Test Passed")
