@@ -52,4 +52,3 @@ expected = ((20 * 30) + 20) & 0xFF
 assert int(dut.uo_out.value) == expected
 
 dut._log.info("ECC Processor Test Passed")
-```
