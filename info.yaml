@@ -1,7 +1,3 @@
-
-The file must start directly with:
-
-```yaml
 yaml_version: 6
 
 project:
