@@ -1,13 +1,11 @@
-```verilog
 `default_nettype none
 `timescale 1ns / 1ps
 
 module tb_tt_um_ecc_processor ();
 
-  // Dump waveforms
   initial begin
     $dumpfile("tb.fst");
-    $dumpvars(0, tb);
+    $dumpvars(0, tb_tt_um_ecc_processor);
     #1;
   end
 
